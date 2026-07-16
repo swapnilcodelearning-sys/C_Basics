@@ -200,8 +200,8 @@ for(int i = 0 ; i < 5; i ++){
 void print_prime(uint32_t range){
      printf("Prime numbers between 1 and %u:\n",range);
 
-    // Loop through numbers 2 to 100 (1 is not a prime number)
-    for (int i = 2; i <= 100; i++) {
+    // Loop through numbers 2 to range (1 is not a prime number)
+    for (int i = 2; i <= range; i++) {
         bool is_prime = true;
 
         // Check for factors up to the square root of i (j * j <= i)
