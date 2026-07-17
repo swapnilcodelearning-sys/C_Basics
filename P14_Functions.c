@@ -1,10 +1,15 @@
 #include<stdio.h>
 #include<stdint.h>
+#define pi 3.14f
 
 void function_1(void);
 void function_2(int num);
 int function_3(void);
 int function_4(int num1, int num2);
+void area_circle(void);
+void max_min_finder(int num1, int num2);
+void cube_number(int num1);
+void even_odd_check(int num1);
 
 int main(){
     function_1();
@@ -29,21 +34,38 @@ int function_4(int num1, int num2){
     printf("Function with return type and arguments. Returning sum of arguments.\n");
     return num1 + num2;
 }
-
-/*
-1. Input the Radius of the circle from the user and find
-the diameter, circumference, and area.
-
-2. Write a C program to find the maximum and
-minimum between two numbers using functions. (With
-Arg, no return value)
-
-3. Write a C program to check whether a number is even or odd
-using functions
-
-4. Write a C program to find cube of any number using function.
-5. Write a Program to print the All Even Number in a given range.
-6. Write a C program to find all prime numbers between given interval using functions.
-7. Write a C program to print all Armstrong numbers between given interval using
-functions
-*/
+void area_circle()
+{
+    int radius, diameter;
+    float circumference, area;
+    printf("Enter radius of circle : ");
+    scanf("%d", &radius);
+    if(radius > 0){
+        diameter = 2*radius;
+        circumference = 2*pi*radius;
+        area = pi*radius*radius;
+        printf("Diameter : %d\nCircumference : %0.2f\nArea : %0.2f\n",diameter,circumference,area);
+    }
+}
+void max_min_finder(int num1, int num2){
+    if(num1 > num2){
+        printf("Max : %d, Min: %d\n",num1, num2);
+    }
+    if(num1 < num2){
+        printf("Max : %d, Min: %d\n",num2, num1);
+    }
+    else{
+        printf("Numbers are equal!");
+    }
+}
+void cube_number(int num1){
+    printf("Cube of %d = %d\n",num1, num1*num1*num1);
+}
+void even_odd_check(int num1){
+    if(num1%2 == 0){
+        printf("Even");
+    }
+    else{
+        printf("Odd");
+    }
+}
